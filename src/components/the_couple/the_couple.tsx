@@ -122,7 +122,7 @@ const TheCoupleSection = () => {
       </div>
 
       <div className={styles.quote}>
-        <p>"Two souls with but a single thought, two hearts that beat as one"</p>
+        <p>&quot;Two souls with but a single thought. two hearts that beat as one&quot;</p>
       </div>
     </section>
   );
