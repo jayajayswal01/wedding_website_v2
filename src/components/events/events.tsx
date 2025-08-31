@@ -1,6 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './events.module.css';
+import eventsImage1 from '../../assets/events/events1.jpg';
+import eventsImage2 from '../../assets/events/events2.jpg';
+import eventsImage3 from '../../assets/events/events3.jpg';
+import eventsImage4 from '../../assets/events/events4.jpg';
+import eventsImage5 from '../../assets/events/events5.jpg'; 
+
+import type { StaticImageData } from 'next/image';
 
 interface EventDetails {
   title: string;
@@ -9,7 +16,7 @@ interface EventDetails {
   venue: string;
   description: string;
   icon: string;
-  bgImage: string;
+  bgImage: string | StaticImageData;
 }
 
 const EventsSection = () => {
@@ -21,7 +28,7 @@ const EventsSection = () => {
       venue: "Lotus Garden, Mumbai",
       description: "Join us for a colorful celebration as the bride's hands are adorned with beautiful mehendi designs. Enjoy music, dance, and festivities.",
       icon: "🌺",
-      bgImage: "/images/events/mehendi.jpg"
+      bgImage: eventsImage1
     },
     {
       title: "Sangeet Night",
@@ -30,7 +37,7 @@ const EventsSection = () => {
       venue: "Golden Palace, Mumbai",
       description: "An evening filled with music, dance performances, and celebrations. Come ready to dance and make memories!",
       icon: "💃",
-      bgImage: "/images/events/sangeet.jpg"
+      bgImage: eventsImage2
     },
     {
       title: "Haldi Ceremony",
@@ -39,7 +46,7 @@ const EventsSection = () => {
       venue: "Family Temple, Mumbai",
       description: "Traditional haldi ceremony where turmeric paste is applied to the bride and groom for blessings and glowing skin.",
       icon: "✨",
-      bgImage: "/images/events/haldi.jpg"
+      bgImage: eventsImage3
     },
     {
       title: "Wedding Ceremony",
@@ -48,7 +55,7 @@ const EventsSection = () => {
       venue: "Royal Gardens, Mumbai",
       description: "Join us for the main wedding ceremony as we take our vows and begin our journey together.",
       icon: "💑",
-      bgImage: "/images/events/wedding.jpg"
+      bgImage: eventsImage4
     },
     {
       title: "Reception",
@@ -57,7 +64,7 @@ const EventsSection = () => {
       venue: "Grand Ballroom, Mumbai",
       description: "Celebrate with us at our wedding reception. An evening of dining, dancing, and joyous celebrations.",
       icon: "🎉",
-      bgImage: "/images/events/reception.jpg"
+      bgImage: eventsImage5
     }
   ];
 

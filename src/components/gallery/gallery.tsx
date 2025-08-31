@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './gallery.module.css';
+import galleryImages1 from '../../assets/gallery/gallery1.avif';
+import galleryImages2 from '../../assets/gallery/gallery2.jpg'; 
 
 interface GalleryImage {
   id: number;
@@ -18,7 +20,7 @@ const GallerySection = () => {
   const images: GalleryImage[] = [
     {
       id: 1,
-      src: "/images/gallery/engagement-1.jpg",
+      src: galleryImages1.src,
       alt: "Engagement Ceremony",
       category: "Engagement",
       width: 800,
@@ -26,7 +28,7 @@ const GallerySection = () => {
     },
     {
       id: 2,
-      src: "/images/gallery/prewedding-1.jpg",
+      src: galleryImages2.src,
       alt: "Pre-wedding Shoot",
       category: "PreWedding",
       width: 600,

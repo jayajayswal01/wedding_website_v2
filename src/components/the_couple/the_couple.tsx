@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './the_couple.module.css';
+import coupleImage1 from '../../assets/couple/couple1.jpeg';
+import coupleImage2 from '../../assets/couple/couple2.jpg';
 
 interface CoupleDetails {
   name: string;
@@ -51,7 +53,7 @@ const TheCoupleSection = () => {
           <div className={styles.imageWrapper}>
             <div className={styles.imageContainer}>
               <Image
-                src="/images/groom.jpg"
+                src={coupleImage1}
                 alt="Groom"
                 width={300}
                 height={400}
@@ -90,7 +92,7 @@ const TheCoupleSection = () => {
           <div className={styles.imageWrapper}>
             <div className={styles.imageContainer}>
               <Image
-                src="/images/bride.jpg"
+                src={coupleImage2}
                 alt="Bride"
                 width={300}
                 height={400}
