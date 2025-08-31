@@ -1,0 +1,285 @@
+.footer {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFE8D6 100%);
+  position: relative;
+  overflow: hidden;
+  padding-top: 3rem;
+}
+
+.decorativeBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  overflow: hidden;
+}
+
+.borderPattern {
+  height: 100%;
+  background-image: radial-gradient(#D4AF37 20%, transparent 20%),
+                    radial-gradient(#9D4C3F 20%, transparent 20%);
+  background-position: 0 0, 4px 4px;
+  background-size: 8px 8px;
+  opacity: 0.2;
+  animation: borderFlow 20s linear infinite;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logoSection {
+  text-align: center;
+}
+
+.logoText {
+  font-size: 2rem;
+  color: #8B4513;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #D4AF37, #B8860B);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.weddingDate {
+  display: block;
+  font-family: 'Dancing Script', cursive;
+  color: #9D4C3F;
+  font-size: 1.2rem;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.linksSection h3,
+.venueSection h3,
+.contactSection h3 {
+  color: #8B4513;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.decorLine {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, #D4AF37, transparent);
+  margin-bottom: 1.5rem;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.link {
+  color: #666;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #D4AF37;
+  transform: translateX(5px);
+}
+
+.linkDecor {
+  color: #D4AF37;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.link:hover .linkDecor {
+  opacity: 1;
+}
+
+.venueList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.venueItem {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.venueItem:hover {
+  transform: translateY(-3px);
+}
+
+.venueItem h4 {
+  color: #8B4513;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.venueItem p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.phoneLink {
+  color: #9D4C3F;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.phoneLink:hover {
+  color: #D4AF37;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #D4AF37, #B8860B);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.contactInfo {
+  margin-top: 1rem;
+}
+
+.contactInfo p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.contactInfo a {
+  color: #9D4C3F;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: #D4AF37;
+}
+
+.bottomSection {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.decorativeElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.decorSymbol {
+  color: #D4AF37;
+}
+
+.decorLine {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+}
+
+.copyright {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.blessing {
+  color: #9D4C3F;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+}
+
+@keyframes borderFlow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .logoText {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .blessing {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1rem;
+  }
+
+  .venueItem {
+    padding: 0.8rem;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+}

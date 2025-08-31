@@ -1,0 +1,302 @@
+.gallerySection {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFE8D6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.decorativeBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  overflow: hidden;
+}
+
+.borderPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: radial-gradient(circle at center, #D4AF37 20%, transparent 20%);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  animation: borderFlow 20s linear infinite;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.headerDecor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.decorSymbol {
+  color: #D4AF37;
+  font-size: 1.8rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: #8B4513;
+  font-family: 'Playfair Display', serif;
+}
+
+.subTitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #9D4C3F;
+  margin-top: 0.5rem;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.categoryButton {
+  padding: 0.8rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: #8B4513;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.categoryButton::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #D4AF37;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.categoryButton:hover::after,
+.categoryButton.active::after {
+  width: 80%;
+}
+
+.categoryButton.active {
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-5px);
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.imageWrapper:hover .imageOverlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  text-align: center;
+  color: white;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .overlayContent {
+  transform: translateY(0);
+}
+
+.viewIcon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.viewText {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightboxImage {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.imageInfo {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+}
+
+.galleryNote {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.noteContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.noteIcon {
+  font-size: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+.noteContent p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: #9D4C3F;
+}
+
+@keyframes borderFlow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 20px 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallerySection {
+    padding: 4rem 1rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .subTitle {
+    font-size: 1.3rem;
+  }
+
+  .categories {
+    gap: 0.5rem;
+  }
+
+  .categoryButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionHeader h2 {
+    font-size: 1.8rem;
+  }
+
+  .noteContent p {
+    font-size: 1.1rem;
+  }
+}

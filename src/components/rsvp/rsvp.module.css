@@ -1,0 +1,337 @@
+.rsvpSection {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFE8D6 100%);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.decorativeBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  overflow: hidden;
+}
+
+.borderPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #D4AF37 25%,
+    #D4AF37 50%,
+    #9D4C3F 50%,
+    #9D4C3F 75%
+  );
+  opacity: 0.15;
+  animation: borderSlide 20s linear infinite;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contentWrapper {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.contentWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #D4AF37, #FF9A8B, #D4AF37);
+}
+
+.headerContent {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.decorSymbol {
+  color: #D4AF37;
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.headerContent h2 {
+  font-size: 2.5rem;
+  color: #8B4513;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+.subTitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #9D4C3F;
+  margin-bottom: 1rem;
+}
+
+.decorativeLine {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  margin: 1rem auto;
+}
+
+.rsvpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: #8B4513;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #D4AF37;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.focusDecor {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #D4AF37;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.input:focus ~ .focusDecor,
+.select:focus ~ .focusDecor,
+.textarea:focus ~ .focusDecor {
+  width: 100%;
+}
+
+.eventsSelection {
+  margin: 1rem 0;
+}
+
+.eventsTitle {
+  color: #8B4513;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.eventCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.eventCheckbox:hover {
+  color: #D4AF37;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.eventCheckbox input {
+  display: none;
+}
+
+.eventCheckbox input:checked + .checkmark {
+  background: #D4AF37;
+  border-color: #D4AF37;
+}
+
+.eventCheckbox input:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.submitButton {
+  background: linear-gradient(45deg, #D4AF37, #B8860B);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.buttonDecor {
+  font-size: 1.2rem;
+}
+
+.loading {
+  position: relative;
+  color: transparent;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease infinite;
+  position: absolute;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.successIcon {
+  font-size: 3rem;
+  color: #D4AF37;
+  margin-bottom: 1rem;
+  animation: sparkle 1.5s ease infinite;
+}
+
+.successMessage h3 {
+  font-size: 2rem;
+  color: #8B4513;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.successMessage p {
+  color: #9D4C3F;
+  font-size: 1.2rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+@keyframes borderSlide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 50px 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .rsvpSection {
+    padding: 4rem 1rem;
+  }
+
+  .contentWrapper {
+    padding: 2rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .headerContent h2 {
+    font-size: 2rem;
+  }
+
+  .subTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eventsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .headerContent h2 {
+    font-size: 1.8rem;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}

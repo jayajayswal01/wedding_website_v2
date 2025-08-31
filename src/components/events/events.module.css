@@ -1,0 +1,258 @@
+.eventsSection {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFE8D6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.decorativeBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #D4AF37 25%,
+    #D4AF37 50%,
+    #9D4C3F 50%,
+    #9D4C3F 75%
+  );
+  opacity: 0.2;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.headerDecor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.decorLine {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+}
+
+.decorSymbol {
+  color: #D4AF37;
+  font-size: 1.5rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: #8B4513;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.subTitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #9D4C3F;
+}
+
+.eventsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.eventCard {
+  display: flex;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.eventCard:hover {
+  transform: translateY(-5px);
+}
+
+.evenCard {
+  flex-direction: row;
+}
+
+.oddCard {
+  flex-direction: row-reverse;
+}
+
+.eventContent {
+  flex: 1;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.eventIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.eventTitle {
+  font-size: 1.8rem;
+  color: #8B4513;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #666;
+}
+
+.detailIcon {
+  font-size: 1.2rem;
+}
+
+.eventDescription {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.mapsButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, #D4AF37, #B8860B);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mapsButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.buttonIcon {
+  font-size: 1.2rem;
+}
+
+.eventImageWrapper {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.eventImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 248, 231, 0.2),
+    rgba(212, 175, 55, 0.1)
+  );
+}
+
+.finalNote {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+}
+
+.noteContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.noteIcon {
+  font-size: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.noteContent p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #9D4C3F;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .eventCard {
+    flex-direction: column !important;
+  }
+
+  .eventImageWrapper {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventsSection {
+    padding: 4rem 1rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .subTitle {
+    font-size: 1.3rem;
+  }
+
+  .eventTitle {
+    font-size: 1.5rem;
+  }
+
+  .eventContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eventDetails {
+    font-size: 0.9rem;
+  }
+
+  .eventDescription {
+    font-size: 0.9rem;
+  }
+
+  .noteContent p {
+    font-size: 1.2rem;
+  }
+}
